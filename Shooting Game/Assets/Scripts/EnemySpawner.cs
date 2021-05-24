@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -21,12 +22,12 @@ public class EnemySpawner : MonoBehaviour
     public WaveText wt;
     public WaveText bwt;
     public GameObject bigWavesText;
+    public GameObject levelCompletedText;
 
     void Start()
     {
         nextSpawn = spawnRate; 
         Invoke("BigWavesTextOn", 1.5f);
-        Invoke("BigWavesTextOff", 3f);
     }
 
     void Update()
@@ -48,7 +49,6 @@ public class EnemySpawner : MonoBehaviour
                     wt.UpdateWaveText(wave);
                     bwt.UpdateWaveText(wave);
                     Invoke("BigWavesTextOn", 1.5f);
-                    Invoke("BigWavesTextOff", 3f);
                 }
                 break;
 
@@ -60,11 +60,10 @@ public class EnemySpawner : MonoBehaviour
                     waveEndCount = 0;
                     wave++;
                     Timer = nextSpawn - 5f;
-                    enemyCount += 5;
+                    enemyCount += 4;
                     wt.UpdateWaveText(wave);
                     bwt.UpdateWaveText(wave);
                     Invoke("BigWavesTextOn", 1.5f);
-                    Invoke("BigWavesTextOff", 3f);
                 }
                 break;
 
@@ -80,7 +79,6 @@ public class EnemySpawner : MonoBehaviour
                     wt.UpdateWaveText(wave);
                     bwt.UpdateWaveText(wave);
                     Invoke("BigWavesTextOn", 1.5f);
-                    Invoke("BigWavesTextOff", 3);
                 }
                 break;
 
@@ -96,7 +94,6 @@ public class EnemySpawner : MonoBehaviour
                     wt.UpdateWaveText(wave);
                     bwt.UpdateWaveText(wave);
                     Invoke("BigWavesTextOn", 1.5f);
-                    Invoke("BigWavesTextOff", 3f);
                 }
                 break;
 
@@ -108,6 +105,7 @@ public class EnemySpawner : MonoBehaviour
                     waveEndCount = 0;
                     wave = 0;
                     Timer = nextSpawn - 5f;
+                    Invoke("LevelCompletedOn", 1.5f);
                 }
                 break;
             
@@ -161,7 +159,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Timer > nextSpawn)
         {
-            if (waveEndCount < 5)
+            if (waveEndCount < 4)
             {
                 nextSpawn = Timer + spawnRate;
                 SpawnEffect();
@@ -199,10 +197,23 @@ public class EnemySpawner : MonoBehaviour
     public void BigWavesTextOn()
     {
         bigWavesText.SetActive(true);
+        Invoke("BigWavesTextOff", 1.5f);
     }
 
     public void BigWavesTextOff()
     {
         bigWavesText.SetActive(false);
+    }
+
+    public void LevelCompletedOn()
+    {
+        levelCompletedText.SetActive(true);
+        Invoke("LevelCompletedOff", 1.5f);
+    }
+
+    public void LevelCompletedOff()
+    {
+        levelCompletedText.SetActive(false);
+        SceneManager.LoadScene("AllLevels");
     }
 }
