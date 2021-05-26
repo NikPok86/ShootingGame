@@ -7,14 +7,17 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemy;
     public Transform spawnEffect;
+
     float randX;
     float randY;
     Vector2 whereToSpawn;
+
     public float Timer;
     public float spawnRate;
     public float nextSpawn;
 
     public int wave = 1;
+
     public int enemyCount;
     int waveEndCount = 0;
 
@@ -23,6 +26,9 @@ public class EnemySpawner : MonoBehaviour
     public WaveText bwt;
     public GameObject bigWavesText;
     public GameObject levelCompletedText;
+
+    public GameManager gm;
+    public int level = 1;
 
     void Start()
     {
