@@ -9,6 +9,6 @@ public class WavesData
 
     public WavesData (EnemySpawner enemySpawner)
     {
-        wave = enemySpawner.wave;
+        wave = EnemySpawner.wave;
     }
 }

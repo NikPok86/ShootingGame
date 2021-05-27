@@ -112,6 +112,7 @@ public class EnemySpawner : MonoBehaviour
                     wave = 0;
                     Timer = nextSpawn - 5f;
                     Invoke("LevelCompletedOn", 1.5f);
+                    gm.GameWaveUpdate();
                 }
                 break;
             

@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     public static bool IsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject bigWavesText;
+    public GameObject levelCompletedText;
     
     void Update()
     {
@@ -35,6 +37,8 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenuUI.SetActive(true);
+        bigWavesText.SetActive(false);
+        levelCompletedText.SetActive(false);
         Time.timeScale = 0f;
         IsPaused = true;
     }
