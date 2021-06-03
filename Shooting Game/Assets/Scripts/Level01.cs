@@ -6,7 +6,7 @@ using TMPro;
 
 public class Level01 : MonoBehaviour
 {
-    public GameManager gm;
+    //public GameManager gm;
     public TextMeshProUGUI level01Text;
     public static int wave;
 

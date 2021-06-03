@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public CharacterController2D controller;
     public Rigidbody2D rb;
-    public GameManager gm;
+    //public GameManager gm;
 
     public Enemy enemy;
 
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
 
         if (currentPlayerHealth <= 0)
         {
-            gm.GameWaveUpdate();
+            //gm.GameWaveUpdate();
             gameOverMenu.SetActive(true);
             Time.timeScale = 0f;
             Destroy(gameObject);
