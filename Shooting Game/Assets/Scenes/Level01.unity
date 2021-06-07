@@ -1333,7 +1333,7 @@ GameObject:
   - component: {fileID: 689314614}
   m_Layer: 8
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3815,7 +3815,6 @@ MonoBehaviour:
   bwt: {fileID: 6532308801865033425}
   bigWavesText: {fileID: 6532308801865033427}
   levelCompletedText: {fileID: 1572476685}
-  gm: {fileID: 0}
   level: 1
 --- !u!4 &1926233794
 Transform:

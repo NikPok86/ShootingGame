@@ -101,7 +101,7 @@ MonoBehaviour:
   damage: 1
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
 --- !u!96 &-1878645639709327684
 TrailRenderer:
   serializedVersion: 2
